@@ -16,7 +16,8 @@
 			zIndex		 : '1',
 			animation	 : false,
 			opacity	 	 : '1',
-			duration	 : '200'
+			duration	 : '200',
+			delay		 : '100',
         }, options);
 		/* adding target class */
 		el.addClass('sticky-target');
@@ -30,8 +31,11 @@
 					el.addClass('stickyHeader');
 			}
 			if (scrollPosition < 100){
+				setTimeout(function(){
 				console.log('no');
-					el.removeClass('stickyHeader');	
+				el.removeClass('stickyHeader');		
+				},settings.delay);
+				
 			}	
 		});
 		/* @var duration of animation */
